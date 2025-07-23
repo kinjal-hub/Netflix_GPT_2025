@@ -14,3 +14,7 @@
         - Title & description
         - MovieSuggestions
            - MovieList - with some  numbers
+
+- Netflix GPT
+  - SearchBar
+  - Movie Suggestion
