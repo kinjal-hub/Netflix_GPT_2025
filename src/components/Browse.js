@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import Header from "./Header";
-import { API_OPTIONS } from "../utils/constants";
+// import { API_OPTIONS } from "../utils/constants";
+import listMovies from "../utils/mockdata";
 
 const Browse = () => {
 
 
 const getNowPlayingMovies = async () => {
+
   try {
-    const data =
-    await fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
-        API_OPTIONS
-    );
+    const data = await fetch(listMovies?.results);
     console.log(data);
     const json = await data.json();
     console.log(json);
