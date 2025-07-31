@@ -1,34 +1,27 @@
-import { useEffect } from "react";
 import Header from "./Header";
+import useNowPlayingMovie from "../hooks/useNowPlayingMovie";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 // import { API_OPTIONS } from "../utils/constants";
-import listMovies from "../utils/mockdata";
-import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/movieSlice";
+
+
 
 const Browse = () => {
-const dispatch = useDispatch();
-
-const getNowPlayingMovies = async () => {
-
-  try {
-    const data = listMovies;
-    console.log(data[0].results);
-    dispatch(addNowPlayingMovies);
-    
-   
-}
-catch(error)
-{
-    console.log(error);
-}
-}
-useEffect(() => {
-    getNowPlayingMovies();
-}, []);
+useNowPlayingMovie();
 
 return (
     <div>
         <Header />
+        <MainContainer />
+        <SecondaryContainer />
+        {/*
+           Main Container
+            - Vedio background
+            - Vedio title
+           Secondary Container
+            - MovieList * n
+            - card * n 
+       */}
     </div>
 )
 };
