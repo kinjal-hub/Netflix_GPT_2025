@@ -5,7 +5,7 @@ const listMovies = [
     "minimum": "2025-06-25"
   },
   "page": 1,
-  "results": [
+  results: [
     {
       "adult": false,
       "backdrop_path": "/8J6UlIFcU7eZfq9iCLbgc8Auklg.jpg",

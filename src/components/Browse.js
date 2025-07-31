@@ -2,17 +2,20 @@ import { useEffect } from "react";
 import Header from "./Header";
 // import { API_OPTIONS } from "../utils/constants";
 import listMovies from "../utils/mockdata";
+import { useDispatch } from "react-redux";
+import { addNowPlayingMovies } from "../utils/movieSlice";
 
 const Browse = () => {
-
+const dispatch = useDispatch();
 
 const getNowPlayingMovies = async () => {
 
   try {
-    const data = await fetch(listMovies?.results);
+    const data = listMovies;
     console.log(data);
-    const json = await data.json();
-    console.log(json);
+    dispatch(addNowPlayingMovies);
+    
+   
 }
 catch(error)
 {
