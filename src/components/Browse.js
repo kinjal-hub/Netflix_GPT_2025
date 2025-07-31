@@ -12,7 +12,7 @@ const getNowPlayingMovies = async () => {
 
   try {
     const data = listMovies;
-    console.log(data);
+    console.log(data[0].results);
     dispatch(addNowPlayingMovies);
     
    
