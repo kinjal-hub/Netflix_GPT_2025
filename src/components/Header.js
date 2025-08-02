@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+import { LOGO, SUPPORTED_LANGUAGE } from "../utils/constants";
+import { toggleGptSerchView } from "../utils/gptSlice";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -41,6 +42,11 @@ const Header = () => {
 
 }, []);
 
+const onHandleGptSearch = () => {
+  // TOGGLE GPT SEARCH
+  dispatch(toggleGptSerchView());
+}
+
 return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
         <img
@@ -49,6 +55,18 @@ return (
         alt="logo"
         />
         {user && (<div className="flex p-2">
+          <select>
+            {SUPPORTED_LANGUAGE.map(lang =>
+            <option key={lang.indentifier}value={lang.indentifier}>
+              {lang.name}
+            </option>)}
+             
+             
+          </select>
+            <button className="py-2 px-4 m-2 bg-red-600 text-black rounded-lg"
+            onClick={onHandleGptSearch}>
+              Serch Gpt
+            </button>
             <img
             className="w-12 h-12"
             alt="userIcon"
