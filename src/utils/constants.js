@@ -23,4 +23,5 @@ export const BG_URL =
 export const SUPPORTED_LANGUAGE = [
   {indentifier: "en", name: "English"},
   {indentifier: "hindi", name: "Hindi"},
-  {indentifier: "spanish",  name: "Spanish"}]
+  {indentifier: "spanish",  name: "Spanish"},
+];
